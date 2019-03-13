@@ -1,0 +1,11 @@
+{
+    "parameters": {
+      "subscriptionId": "mySubscriptionId",
+      "resourceGroupName": "myResourceGroupName",
+      "softwareUpdateBaselineName": "myBaselineName",
+      "api-version": "2018-06-30-preview"
+    },
+    "responses": {
+      "200": {}
+    }
+  }

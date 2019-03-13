@@ -1,0 +1,46 @@
+{
+    "parameters": {
+        "subscriptionId": "mySubscriptionId",
+        "resourceGroupName": "myResourceGroupName",
+        "vmName": "myVMName",
+        "baselineAssignment" : "myBaselineAssignmentName",
+        "api-version": "2018-06-30-preview",
+        "parameters": {
+            "properties": {
+                "baseline": {
+                    "id": "/subscriptions/mySubscriptionId/resourceGroups/myResourceGroupName/providers/Microsoft.GuestConfiguration/softwareUpdateBaselines/myBaselineName"
+                }
+            }
+        }
+    },
+    "responses": {
+      "201": {
+        "headers": {},
+        "body": {
+            "location": "westcentralus",
+            "id": "/subscriptions/mySubscriptionId/resourceGroups/myResourceGroupName/providers/Microsoft.GuestConfiguration/softwareUpdateBaselineAssignmentss/myBaselineAssignmentName",
+            "name": "myBaselineAssignmentName",
+            "type": "providers/Microsoft.GuestConfiguration/softwareUpdateBaselineAssignments",
+            "properties": {
+                "baseline": {
+                    "id": "/subscriptions/mySubscriptionId/resourceGroups/myResourceGroupName/providers/Microsoft.GuestConfiguration/softwareUpdateBaselines/myBaselineName"
+                }
+            }
+        }
+      },
+      "200": {
+        "headers": {},
+        "body": {
+            "location": "westcentralus",
+            "id": "/subscriptions/mySubscriptionId/resourceGroups/myResourceGroupName/providers/Microsoft.GuestConfiguration/softwareUpdateBaselineAssignments/myBaselineAssignmentName",
+            "name": "myBaselineAssignmentName",
+            "type": "providers/Microsoft.GuestConfiguration/softwareUpdateBaselineAssignments",
+            "properties": {
+                "baseline": {
+                    "id": "/subscriptions/mySubscriptionId/resourceGroups/myResourceGroupName/providers/Microsoft.GuestConfiguration/softwareUpdateBaselines/myBaselineName"
+                }
+            }
+        }
+      }
+    }
+  }
