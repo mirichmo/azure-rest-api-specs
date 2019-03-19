@@ -1096,7 +1096,15 @@
         "restartPending": {
           "type": "string",
           "readOnly": true,
-          "description": "Restart pending status of the computer"
+          "description": "Restart pending status of the computer",
+          "x-ms-enum":{
+            "name": "restartPending",
+            "modelAsString": true
+          },
+          "enum": [
+            "True",
+            "False"
+          ]
         },
         "guestConfigAgentVersion": {
           "type": "string",
@@ -1106,7 +1114,6 @@
         "guestConfigAgentStartTime": {
           "type": "string",
           "readOnly": true,
-          "format": "date-time",
           "description": "Start time of the guest configuration agent"
         },
         "netRuntimeVersion": {
@@ -1127,7 +1134,16 @@
         "windowsUpdateIncludeRecommendedUpdates": {
           "type": "string",
           "readOnly": true,
-          "description": "Windows Update include recommended updates"
+          "description": "Windows Update include recommended updates",
+          "x-ms-enum":{
+            "name": "windowsUpdateIncludeRecommendedUpdates",
+            "modelAsString": true
+          },
+          "enum": [
+            "True",
+            "False",
+            "Unknown"
+          ]
         },
         "wsusServer": {
           "type": "string",
@@ -1140,17 +1156,17 @@
           "description": "Package manager discovered on the computer if it is running Linux"
         },
         "criticalCount": {
-          "type": "string",
+          "type": "integer",
           "readOnly": true,
           "description": "Count of updates available classified as critical"
         },
         "securityCount": {
-          "type": "string",
+          "type": "integer",
           "readOnly": true,
           "description": "Count of updates available classified as security"
         },
         "otherCount": {
-          "type": "string",
+          "type": "integer",
           "readOnly": true,
           "description": "Count of updates available that are classified as neither critical or security"
         },
@@ -1175,14 +1191,28 @@
           "description": "Stack Trace for any terminal error during assessment, if any"
         },
         "oldestMissingSecurityUpdateInDays": {
-          "type": "string",
+          "type": "integer",
           "readOnly": true,
           "description": "Number of days since the oldest missing security update was released"
         },
         "oldestMissingSecurityUpdateBucket": {
           "type": "string",
           "readOnly": true,
-          "description": "30 day range describing the date of the oldest missing security update"
+          "description": "30 day range describing the date of the oldest missing security update",
+          "x-ms-enum":{
+            "name": "oldestMissingSecurityUpdateBucket",
+            "modelAsString": true
+          },
+          "enum": [
+            "Recent",
+            "30 days ago",
+            "60 days ago",
+            "90 days ago",
+            "120 days ago",
+            "150 days ago",
+            "180 days ago",
+            "Older"
+          ]
         },
         "lastRefreshDate": {
           "type": "string",
@@ -1235,13 +1265,21 @@
         "availableOnComputerSince": {
           "type": "string",
           "readOnly": true,
-          "format": "date-time",
           "description": "Point in time when this update was first seen on this computer"
         },
         "approved": {
           "type": "string",
           "readOnly": true,
-          "description": "Approval status"
+          "description": "Approval status",
+          "x-ms-enum":{
+            "name": "approved",
+            "modelAsString": true
+          },
+          "enum": [
+            "True",
+            "False",
+            "Unknown"
+          ]
         },
         "packageRepository": {
           "type": "string",
@@ -1255,20 +1293,32 @@
         },
         "isSupercededUpdate": {
           "type": "string",
-          "readOnly": true,"x-ms-enum": {
+          "readOnly": true,
+          "x-ms-enum": {
             "name": "isSupercededUpdate",
             "modelAsString": true
           },
           "enum": [
             "True",
-            "False"
+            "False",
+            "Unknown"
           ],
           "description": "Is a superceded update"
         },
         "deploymentAction": {
           "type": "string",
           "readOnly": true,
-          "description": "Deployment action"
+          "description": "Deployment action",
+          "x-ms-enum": {
+            "name": "isSupercededUpdate",
+            "modelAsString": true
+          },
+          "enum": [
+            "None",
+            "Installation",
+            "Uninstallation",
+            "Detection"
+          ]
         },
         "kbid": {
           "type": "string",
@@ -1283,7 +1333,6 @@
         "publishedDate": {
           "type": "string",
           "readOnly": true,
-          "format": "date-time",
           "description": "Reported published date for this update"
         },
         "productName": {
@@ -1310,11 +1359,6 @@
           "type": "string",
           "readOnly": true,
           "description": "Normalized update classification"
-        },
-        "packageClassification": {
-          "type": "string",
-          "readOnly": true,
-          "description": "Linux package classification"
         },
         "packageSeverity": {
           "type": "string",
@@ -1359,17 +1403,44 @@
         "optional": {
           "type": "string",
           "readOnly": true,
-          "description": "Update optional"
+          "description": "Update optional",
+          "x-ms-enum":{
+            "name": "optional",
+            "modelAsString": true
+          },
+          "enum": [
+            "True",
+            "False",
+            "Unknown"
+          ]
         },
         "autoSelectOnWebsites": {
           "type": "string",
           "readOnly": true,
-          "description": "Auto-select on websites"
+          "description": "Auto-select on websites",
+          "x-ms-enum":{
+            "name": "autoSelectOnWebsites",
+            "modelAsString": true
+          },
+          "enum": [
+            "True",
+            "False",
+            "Unknown"
+          ]
         },
         "browseOnly": {
           "type": "string",
           "readOnly": true,
-          "description": "Browse only"
+          "description": "Browse only",
+          "x-ms-enum":{
+            "name": "browseOnly",
+            "modelAsString": true
+          },
+          "enum": [
+            "True",
+            "False",
+            "Unknown"
+          ]
         },
         "lastRefreshDate": {
           "type": "string",
