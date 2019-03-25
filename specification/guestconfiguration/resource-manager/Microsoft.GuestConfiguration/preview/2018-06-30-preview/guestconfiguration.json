@@ -536,6 +536,494 @@
         ]
       }
     },
+    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Compute/virtualMachines/{vmName}/providers/Microsoft.GuestConfiguration/softwareUpdateBaselineAssignments/{softwareUpdateBaselineAssignmentName}": {
+      "put": {
+        "tags": [
+          "SoftwareUpdateBaselineAssignments"
+        ],
+        "operationId": "SoftwareUpdateBaselineAssignments_Create",
+        "description": "Creates an association between a VM and a Software Update Baseline",
+        "x-ms-examples": {
+          "Create or update software update baseline assignment": {
+            "$ref": "./examples/createSoftwareUpdateBaselineAssignment.json"
+          }
+        },
+        "parameters": [
+          {
+            "name": "softwareUpdateBaselineAssignmentName",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "description": "Name of the software update baseline assignment."
+          },
+          {
+            "name": "parameters",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/SoftwareUpdateBaselineAssignment"
+            },
+            "description": "Parameters supplied to the create a software update baseline assignment assignment."
+          },
+          {
+            "$ref": "../../common/v1/definitions.json#/parameters/SubscriptionIdParameter"
+          },
+          {
+            "$ref": "../../common/v1/definitions.json#/parameters/ResourceGroupNameParameter"
+          },
+          {
+            "$ref": "../../common/v1/definitions.json#/parameters/VmNameParameter"
+          },
+          {
+            "$ref": "../../common/v1/definitions.json#/parameters/ApiVersionParameter"
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created. The software update baseline assignment for the VM was created successfully.",
+            "schema": {
+              "$ref": "#/definitions/SoftwareUpdateBaselineAssignment"
+            }
+          },
+          "200": {
+            "description": "OK. The software update baseline assignment for the VM was updated successfully.",
+            "schema": {
+              "$ref": "#/definitions/SoftwareUpdateBaselineAssignment"
+            }
+          },
+          "default": {
+            "description": "Error response describing why the operation failed.",
+            "schema": {
+              "$ref": "../../common/v1/definitions.json#/definitions/ErrorResponse"
+            }
+          }
+        },
+        "x-ms-long-running-operation": true,
+        "produces": [
+          "application/json"
+        ],
+        "consumes": [
+          "application/json"
+        ]
+      },
+      "get": {
+        "tags": [
+          "SoftwareUpdateBaselineAssignments"
+        ],
+        "operationId": "SoftwareUpdateBaselineAssignments_Get",
+        "description": "Get information about a software update baseline assignment",
+        "x-ms-examples": {
+          "Get a software update baseline assignment": {
+            "$ref": "./examples/getSoftwareUpdateBaselineAssignment.json"
+          }
+        },
+        "parameters": [
+          {
+            "$ref": "../../common/v1/definitions.json#/parameters/ResourceGroupNameParameter"
+          },
+          {
+            "name": "softwareUpdateBaselineAssignmentName",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "description": "The software update baseline assignment name."
+          },
+          {
+            "$ref": "../../common/v1/definitions.json#/parameters/SubscriptionIdParameter"
+          },
+          {
+            "$ref": "../../common/v1/definitions.json#/parameters/VmNameParameter"
+          },
+          {
+            "$ref": "../../common/v1/definitions.json#/parameters/ApiVersionParameter"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK. The software update baseline assignment was returned successfully.",
+            "schema": {
+              "$ref": "#/definitions/SoftwareUpdateBaselineAssignment"
+            }
+          },
+          "default": {
+            "description": "Error response describing why the operation failed.",
+            "schema": {
+              "$ref": "../../common/v1/definitions.json#/definitions/ErrorResponse"
+            }
+          }
+        },
+        "produces": [
+          "application/json"
+        ],
+        "consumes": [
+          "application/json"
+        ]
+      },
+      "delete": {
+        "tags": [
+          "SoftwareUpdateBaselineAssignments"
+        ],
+        "operationId": "SoftwareUpdateBaselineAssignments_Delete",
+        "description": "Delete a software update baseline assignment",
+        "x-ms-examples": {
+          "Delete an software update baseline assignment": {
+            "$ref": "./examples/deleteSoftwareUpdateBaselineAssignment.json"
+          }
+        },
+        "parameters": [
+          {
+            "$ref": "../../common/v1/definitions.json#/parameters/ResourceGroupNameParameter"
+          },
+          {
+            "name": "softwareUpdateBaselineAssignmentName",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "description": "Name of the software update baseline assignment"
+          },
+          {
+            "$ref": "../../common/v1/definitions.json#/parameters/SubscriptionIdParameter"
+          },
+          {
+            "$ref": "../../common/v1/definitions.json#/parameters/VmNameParameter"
+          },
+          {
+            "$ref": "../../common/v1/definitions.json#/parameters/ApiVersionParameter"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "default": {
+            "description": "Error response describing why the operation failed.",
+            "schema": {
+              "$ref": "../../common/v1/definitions.json#/definitions/ErrorResponse"
+            }
+          }
+        },
+        "x-ms-long-running-operation": true,
+        "produces": [
+          "application/json"
+        ],
+        "consumes": [
+          "application/json"
+        ]
+      }
+  },
+  "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Compute/virtualMachines/{vmName}/providers/Microsoft.GuestConfiguration/softwareUpdateBaselineAssignments": {
+    "get": {
+      "tags": [
+        "SoftwareUpdateBaselineAssignments"
+      ],
+      "operationId": "SoftwareUpdateBaselineAssignments_List",
+      "description": "List all software update baseline assignments for a virtual machine.",
+      "x-ms-examples": {
+        "List all software update baseline assignments for a virtual machine": {
+          "$ref": "./examples/listSoftwareUpdateBaselineAssignments.json"
+        }
+      },
+      "parameters": [
+        {
+          "$ref": "../../common/v1/definitions.json#/parameters/ResourceGroupNameParameter"
+        },
+        {
+          "$ref": "../../common/v1/definitions.json#/parameters/SubscriptionIdParameter"
+        },
+        {
+          "$ref": "../../common/v1/definitions.json#/parameters/VmNameParameter"
+        },
+        {
+          "$ref": "../../common/v1/definitions.json#/parameters/ApiVersionParameter"
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "OK",
+          "schema": {
+            "$ref": "#/definitions/SoftwareUpdateBaselineAssignmentList"
+          }
+        },
+        "default": {
+          "description": "Error response describing why the operation failed.",
+          "schema": {
+            "$ref": "../../common/v1/definitions.json#/definitions/ErrorResponse"
+          }
+        }
+      },
+      "x-ms-pageable": {
+        "nextLinkName": null
+      },
+      "produces": [
+        "application/json"
+      ],
+      "consumes": [
+        "application/json"
+      ]
+    }
+  },
+  "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.GuestConfiguration/softwareUpdateBaselines/{softwareUpdateBaselineName}": {
+      "put": {
+        "tags": [
+          "SoftwareUpdateBaselines"
+        ],
+        "operationId": "SoftwareUpdateBaselines_Create",
+        "description": "Creates an Software Update Baseline under a resource group",
+        "x-ms-examples": {
+          "Create or update software update baseline": {
+            "$ref": "./examples/createOrUpdateSoftwareUpdateBaseline.json"
+          }
+        },
+        "parameters": [
+          {
+            "name": "softwareUpdateBaselineName",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "description": "Name of the software update baseline"
+          },
+          {
+            "name": "parameters",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/SoftwareUpdateBaseline"
+            },
+            "description": "Parameters supplied to the create a software update baseline."
+          },
+          {
+            "$ref": "../../common/v1/definitions.json#/parameters/SubscriptionIdParameter"
+          },
+          {
+            "$ref": "../../common/v1/definitions.json#/parameters/ResourceGroupNameParameter"
+          },
+          {
+            "$ref": "../../common/v1/definitions.json#/parameters/ApiVersionParameter"
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created. The software update baseline was created successfully.",
+            "schema": {
+              "$ref": "#/definitions/SoftwareUpdateBaseline"
+            }
+          },
+          "200": {
+            "description": "OK. The software update baseline was updated successfully.",
+            "schema": {
+              "$ref": "#/definitions/SoftwareUpdateBaseline"
+            }
+          },
+          "default": {
+            "description": "Error response describing why the operation failed.",
+            "schema": {
+              "$ref": "../../common/v1/definitions.json#/definitions/ErrorResponse"
+            }
+          }
+        },
+        "x-ms-long-running-operation": true,
+        "produces": [
+          "application/json"
+        ],
+        "consumes": [
+          "application/json"
+        ]
+      },
+      "get": {
+        "tags": [
+          "SoftwareUpdateBaselines"
+        ],
+        "operationId": "SoftwareUpdateBaselines_Get",
+        "description": "Get information about a software update baseline",
+        "x-ms-examples": {
+          "Get a software update baseline": {
+            "$ref": "./examples/getSoftwareUpdateBaseline.json"
+          }
+        },
+        "parameters": [
+          {
+            "$ref": "../../common/v1/definitions.json#/parameters/ResourceGroupNameParameter"
+          },
+          {
+            "name": "softwareUpdateBaselineName",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "description": "Name of the software update baseline"
+          },
+          {
+            "$ref": "../../common/v1/definitions.json#/parameters/SubscriptionIdParameter"
+          },
+          {
+            "$ref": "../../common/v1/definitions.json#/parameters/ApiVersionParameter"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK. The software update baseline was returned successfully.",
+            "schema": {
+              "$ref": "#/definitions/SoftwareUpdateBaseline"
+            }
+          },
+          "default": {
+            "description": "Error response describing why the operation failed.",
+            "schema": {
+              "$ref": "../../common/v1/definitions.json#/definitions/ErrorResponse"
+            }
+          }
+        },
+        "produces": [
+          "application/json"
+        ],
+        "consumes": [
+          "application/json"
+        ]
+      },
+      "delete": {
+        "tags": [
+          "SoftwareUpdateBaselines"
+        ],
+        "operationId": "SoftwareUpdateBaselines_Delete",
+        "description": "Delete a software update baseline",
+        "x-ms-examples": {
+          "Delete an software update baseline assignment": {
+            "$ref": "./examples/deleteSoftwareUpdateBaseline.json"
+          }
+        },
+        "parameters": [
+          {
+            "$ref": "../../common/v1/definitions.json#/parameters/ResourceGroupNameParameter"
+          },
+          {
+            "name": "softwareUpdateBaselineName",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "description": "Name of the software update baseline"
+          },
+          {
+            "$ref": "../../common/v1/definitions.json#/parameters/SubscriptionIdParameter"
+          },
+          {
+            "$ref": "../../common/v1/definitions.json#/parameters/ApiVersionParameter"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "default": {
+            "description": "Error response describing why the operation failed.",
+            "schema": {
+              "$ref": "../../common/v1/definitions.json#/definitions/ErrorResponse"
+            }
+          }
+        },
+        "x-ms-long-running-operation": true,
+        "produces": [
+          "application/json"
+        ],
+        "consumes": [
+          "application/json"
+        ]
+      }
+    },
+    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.GuestConfiguration/softwareUpdateBaselines": {
+      "get": {
+        "tags": [
+          "SoftwareUpdateBaselines"
+        ],
+        "operationId": "SoftwareUpdateBaselines_List",
+        "description": "List all software update baseline for a resource group.",
+        "x-ms-examples": {
+          "List all software update baseline assignments for a resource group": {
+            "$ref": "./examples/listSoftwareUpdateBaselines.json"
+          }
+        },
+        "parameters": [
+          {
+            "$ref": "../../common/v1/definitions.json#/parameters/ResourceGroupNameParameter"
+          },
+          {
+            "$ref": "../../common/v1/definitions.json#/parameters/SubscriptionIdParameter"
+          },
+          {
+            "$ref": "../../common/v1/definitions.json#/parameters/ApiVersionParameter"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/SoftwareUpdateBaselineList"
+            }
+          },
+          "default": {
+            "description": "Error response describing why the operation failed.",
+            "schema": {
+              "$ref": "../../common/v1/definitions.json#/definitions/ErrorResponse"
+            }
+          }
+        },
+        "x-ms-pageable": {
+          "nextLinkName": null
+        },
+        "produces": [
+          "application/json"
+        ],
+        "consumes": [
+          "application/json"
+        ]
+      }
+    },
+    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Compute/virtualMachines/{vmName}/providers/Microsoft.GuestConfiguration/softwareUpdateComplianceSummary": {
+      "get": {
+        "tags": [
+          "SoftwareUpdateComplianceSummary"
+        ],
+        "operationId": "SoftwareUpdateComplianceSummary_Get",
+        "description": "Get the software update compliance summary for a virtual machine.",
+        "x-ms-examples": {
+          "Get the software update compliance summary for a virtual machine.": {
+            "$ref": "./examples/getSoftwareUpdateComplianceSummary.json"
+          }
+        },
+        "parameters": [
+          {
+            "$ref": "../../common/v1/definitions.json#/parameters/ResourceGroupNameParameter"
+          },
+          {
+            "$ref": "../../common/v1/definitions.json#/parameters/SubscriptionIdParameter"
+          },
+          {
+            "$ref": "../../common/v1/definitions.json#/parameters/VmNameParameter"
+          },
+          {
+            "$ref": "../../common/v1/definitions.json#/parameters/ApiVersionParameter"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/SoftwareUpdateComplianceSummary"
+            }
+          },
+          "default": {
+            "description": "Error response describing why the operation failed.",
+            "schema": {
+              "$ref": "../../common/v1/definitions.json#/definitions/ErrorResponse"
+            }
+          }
+        },
+        "produces": [
+          "application/json"
+        ],
+        "consumes": [
+          "application/json"
+        ]
+      }
+    },
     "/providers/Microsoft.GuestConfiguration/operations": {
       "get": {
         "tags": [
@@ -1376,6 +1864,319 @@
           "readOnly": true,
           "format": "date-time",
           "description": "Last refresh date"
+        }
+      }
+    },
+    "SoftwareUpdateBaseline": {
+      "description": "The software update baseline to assign.",
+      "properties": {
+        "properties": {
+          "x-ms-client-flatten": false,
+          "$ref": "#/definitions/SoftwareUpdateBaselineProperties",
+          "description": "Properties of the software update baseline."
+        }
+      },
+      "allOf": [
+        {
+          "$ref": "../../common/v1/definitions.json#/definitions/ProxyResource"
+        }
+      ]
+    },
+    "SoftwareUpdateBaselineList": {
+      "description": "List of software update baselines.",
+      "properties": {
+        "value": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/SoftwareUpdateBaseline"
+          },
+          "description": "List of software update baselines."
+        }
+      }
+    },
+    "SoftwareUpdateBaselineProperties": {
+      "description": "Properties of the software update baseline.",
+      "properties": {
+        "windowsBaselineProperties": {
+          "description": "Software update baseline properties for Windows VM.",
+          "$ref": "#/definitions/WindowsBaselineProperties"
+        },
+        "linuxBaselineProperties": {
+          "description": "Software update baseline properties for Linux VM.",
+          "$ref": "#/definitions/LinuxBaselineProperties"
+        }
+      }
+    },
+    "WindowsBaselineProperties": {
+      "description": "Properties of the Windows software update baseline",
+      "properties": {
+        "classifications": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/WindowsSoftwareUpdateBaselineClassification"
+          },
+          "description": "Software update baseline classification for Windows."
+        },
+        "include": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/SoftwareUpdateBaselineInclude"
+          },
+          "description": "The include clause for Software update baseline."
+        },
+        "exclude": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/SoftwareUpdateBaselineExclude"
+          },
+          "description": "The exclude clause for Software update baseline."
+        }
+      }
+    },
+    "LinuxBaselineProperties": {
+      "description": "Properties of the Linux software update baseline",
+      "properties": {
+        "classifications": {  
+            "type": "array",
+            "items": {
+              "$ref": "#/definitions/LinuxSoftwareUpdateBaselineClassification"
+            },
+            "description": "Software update baseline classification for Linux."      
+        },
+        "include": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/SoftwareUpdateBaselineInclude"
+          },
+          "description": "The include clause for Software update baseline."
+        },
+        "exclude": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/SoftwareUpdateBaselineExclude"
+          },
+          "description": "The exclude clause for Software update baseline."
+        }
+      }
+    },
+    "WindowsSoftwareUpdateBaselineClassification": {
+      "description": "Software update baseline classification for Windows.",
+      "properties": {
+        "type": {
+          "type": "string",
+          "description": "The category of the classification.",
+          "x-ms-enum": {
+            "name": "type",
+            "modelAsString": true
+          },
+          "enum": [
+            "Critical",
+            "Definition",
+            "FeaturePack",
+            "Security",
+            "ServicePack",
+            "Tools",
+            "Unclassified",
+            "UpdateRollup",
+            "Updates"
+          ]
+        },
+        "nonCompliantAfterDays": {
+          "type": "number",
+          "description": "Allowed number of days that the software update may be non-compliant."
+        }
+      }
+    },
+    "LinuxSoftwareUpdateBaselineClassification": {
+      "description": "Software update baseline classification for Linux.",
+      "properties": {
+        "type": {
+          "type": "string",
+          "description": "The category of the classification.",
+          "x-ms-enum": {
+            "name": "type",
+            "modelAsString": true
+          },
+          "enum": [
+            "Critical",
+            "Other",
+            "Security",
+            "Unclassified"
+          ]
+        },
+        "nonCompliantAfterDays": {
+          "type": "number",
+          "description": "Allowed number of days that the software update may be non-compliant."
+        }
+      }
+    },
+    "SoftwareUpdateBaselineInclude": {
+      "description": "The include clause for Software update baseline.",
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "Name of the software update that should be compliant."
+        },
+        "nonCompliantAfterDays": {
+          "type": "number",
+          "description": "Allowed number of days that the software update may be non-compliant."
+        }
+      }
+    },
+    "SoftwareUpdateBaselineExclude": {
+      "description": "The exclude clause for Software update baseline.",
+      "properties":
+      {
+        "name": {
+          "type": "string",
+          "description": "Name of the software update to exclude from compliance."
+        }
+      }
+    },
+    "SoftwareUpdateBaselineAssignment": {
+      "description": "Software Update Baseline Assignment is an association between a VM and a software update baseline.",
+      "properties": {
+        "properties": {
+          "x-ms-client-flatten": false,
+          "$ref": "#/definitions/SoftwareUpdateBaselineAssignmentProperties",
+          "description": "Properties of the software update baseline."
+        }
+      },
+      "allOf": [
+        {
+          "$ref": "../../common/v1/definitions.json#/definitions/ProxyResource"
+        }
+      ]
+    },
+    "SoftwareUpdateBaselineAssignmentList": {
+      "description": "List of software update baseline assignments for a given VM.",
+      "properties": {
+        "value": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/SoftwareUpdateBaselineAssignment"
+          },
+          "description": "List of software update baseline assignment."
+        }
+      }
+    },
+    "SoftwareUpdateBaselineAssignmentProperties": {
+      "description": "Properties of the software update baseline assignment.",
+      "properties": {
+        "baseline": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "string",
+              "description": "Resource Id of the software update baseline."
+            }
+          },
+          "description": "Information of the software update baseline."
+        },
+        "complianceStatus": {
+          "type": "string",
+          "readOnly": true,
+          "description": "A value indicating compliance status of the virtual machine for the assigned software update baseline.",
+          "x-ms-enum": {
+            "name": "complianceStatus",
+            "modelAsString": true
+          },
+          "enum": [
+            "Compliant",
+            "NonCompliant",
+            "Pending"
+          ]
+        },
+        "lastRefreshDate": {
+          "type": "string",
+          "readOnly": true,
+          "description": "Last refresh date for the software update baseline assignment."
+        },
+        "criticalUpdateCount": {
+          "type": "number",
+          "readOnly": true,
+          "description": "The number of updates available classified as critical."
+        },
+        "securityUpdateCount": {
+          "type": "number",
+          "readOnly": true,
+          "description": "The number of updates available classified as security."
+        },
+        "otherUpdateCount": {
+          "type": "number",
+          "readOnly": true,
+          "description": "The number of updates available that are classified as neither critical or security."
+        },
+        "violatingUpdates": {
+          "type": "array",
+          "readOnly": true,
+          "items": {
+            "$ref": "#/definitions/SoftwareUpdate"
+          },
+          "description": "The list of software updates that violate the baseline."
+        }
+      }
+    },
+    "SoftwareUpdateComplianceSummary": {
+      "properties": {
+        "properties": {
+          "$ref": "#/definitions/SoftwareUpdateComplianceSummaryProperties",
+          "description": "Properties of the software update compliance summary."
+        }
+      },
+      "allOf": [
+        {
+          "$ref": "../../common/v1/definitions.json#/definitions/ProxyResource"
+        }
+      ],
+      "description": "Software update compliance summry the software update baseline assignment. Report contains information such as compliance status and counts of updates."
+    },
+    "SoftwareUpdateComplianceSummaryProperties": {
+      "description": "Properties for software update compliance summary.",
+      "properties": {
+        "aggregateComplianceStatus": {
+          "type": "string",
+          "readOnly": true,
+          "description": "A value indicating aggregate compliance status of the virtual machine for the assigned software update baseline.",
+          "x-ms-enum": {
+            "name": "AggregateComplianceStatus",
+            "modelAsString": true
+          },
+          "enum": [
+            "Compliant",
+            "NonCompliant",
+            "Pending"
+          ]
+        },
+        "pendingCount": {
+          "description": "The number of software update baseline evaluation that is in pending state.",
+          "readOnly": true,
+          "type": "number"
+        },
+        "compliantCount": {
+          "description": "The number of software update baseline evaluation that is compliant.",
+          "readOnly": true,
+          "type": "number"
+        },
+        "nonCompliantCount": {
+          "description": "The number of software update baseline evaluation that is non compliant.",
+          "readOnly": true,
+          "type": "number"
+        },
+        "criticalUpdateCount": {
+          "description": "The number of updates available classified as critical.",
+          "readOnly": true,
+          "type": "number"
+        },
+        "securityUpdateCount": {
+          "description": "The number of updates available classified as security.",
+          "readOnly": true,
+          "type": "number"
+        },
+        "otherUpdateCount": {
+          "description": "The number of updates available that are classified as neither critical or security.",
+          "readOnly": true,
+          "type": "number"
         }
       }
     }

@@ -1,0 +1,74 @@
+{
+    "parameters": {
+        "subscriptionId": "mySubscriptionId",
+        "resourceGroupName": "myResourceGroupName",
+        "api-version": "2018-06-30-preview"
+    },
+    "responses": {
+      "200": {
+        "headers": {},
+        "body": [
+            {
+                "id": "/subscriptions/mySubscriptionId/resourceGroups/myResourceGroupName/providers/Microsoft.GuestConfiguration/softwareUpdateBaselines/myBaselineName",
+                "name": "myBaselineName",
+                "type": "providers/Microsoft.GuestConfiguration/softwareUpdateBaselines",
+                "properties": {
+                    "windowsBaselineProperties": {
+                        "classifications": [
+                            {
+                            "Type": "Security",
+                            "NonCompliantAfterDays": "10"
+                            },
+                            {
+                            "Type": "Critical",
+                            "NonCompliantAfterDays": "7"
+                            }
+                        ],
+                        "include": [
+                            {
+                            "Name": "KB123456",
+                            "NonCompliantAfterDays": "7"
+                            }
+                        ],
+                        "exclude": [
+                            {
+                            "Name": "KB654321"
+                            }
+                        ]
+                    }
+                }
+            },
+            {
+                "id": "/subscriptions/mySubscriptionId/resourceGroups/myResourceGroupName/providers/Microsoft.GuestConfiguration/softwareUpdateBaselines/myOtherBaselineName",
+                "name": "myOtherBaselineName",
+                "type": "providers/Microsoft.GuestConfiguration/softwareUpdateBaselines",
+                "properties": {
+                    "windowsBaselineProperties": {
+                        "classifications": [
+                            {
+                            "Type": "Security",
+                            "NonCompliantAfterDays": "10"
+                            },
+                            {
+                            "Type": "Critical",
+                            "NonCompliantAfterDays": "7"
+                            }
+                        ],
+                        "include": [
+                            {
+                            "Name": "KB123456",
+                            "NonCompliantAfterDays": "7"
+                            }
+                        ],
+                        "exclude": [
+                            {
+                            "Name": "KB654321"
+                            }
+                        ]
+                    }
+                }
+            }
+        ]
+      }
+    }
+  }
