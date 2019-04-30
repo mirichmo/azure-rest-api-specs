@@ -1254,7 +1254,7 @@
       "properties": {
         "updateState": {
           "type": "string",
-          "enum": ["Needed", "Installed"],
+          "enum": ["Needed", "Installed", "InstalledPendingReboot"],
           "x-ms-enum":{
             "name": "updateState",
             "modelAsString": true
