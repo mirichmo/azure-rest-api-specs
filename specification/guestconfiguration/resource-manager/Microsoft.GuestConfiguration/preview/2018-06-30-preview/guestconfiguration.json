@@ -1093,12 +1093,12 @@
           "format": "date-time",
           "description": "Start time of the computer"
         },
-        "restartPending": {
+        "rebootPending": {
           "type": "string",
           "readOnly": true,
-          "description": "Restart pending status of the computer",
+          "description": "Reboot pending status of the computer",
           "x-ms-enum":{
-            "name": "restartPending",
+            "name": "rebootPending",
             "modelAsString": true
           },
           "enum": [
