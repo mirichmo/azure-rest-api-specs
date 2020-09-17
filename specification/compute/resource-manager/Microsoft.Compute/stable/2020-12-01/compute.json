@@ -3635,7 +3635,7 @@
         }
       }
     },
-    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Compute/virtualMachines/{vmName}/patchAssessmentResults/{resultId}": {
+    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Compute/virtualMachines/{vmName}/patchAssessmentResults/latest": {
       "get": {
         "tags": [
           "VirtualMachineAssessmentResults"
@@ -3656,20 +3656,6 @@
             "required": true,
             "type": "string",
             "description": "The name of the virtual machine."
-          },
-          {
-            "name": "resultId",
-            "in": "path",
-            "required": true,
-            "type": "string",
-            "description": "The identifier of the assessment result."
-          },
-          {
-            "name": "$expand",
-            "in": "query",
-            "required": false,
-            "type": "string",
-            "description": "The expand expression to apply on the operation."
           },
           {
             "$ref": "#/parameters/ApiVersionParameter"
@@ -3711,13 +3697,6 @@
             "description": "The name of the virtual machine containing the extension."
           },
           {
-            "name": "$expand",
-            "in": "query",
-            "required": false,
-            "type": "string",
-            "description": "The expand expression to apply on the operation."
-          },
-          {
             "$ref": "#/parameters/ApiVersionParameter"
           },
           {
@@ -3734,13 +3713,13 @@
         }
       }
     },
-    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Compute/virtualMachines/{vmName}/patchAssessmentResults/{resultId}/softwarePatches/{patchId}": {
+    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Compute/virtualMachines/{vmName}/patchAssessmentResults/latest/softwarePatches/{patchId}": {
       "get": {
         "tags": [
           "VirtualMachineSoftwarePatches"
         ],
         "operationId": "VirtualMachineSoftwarePatches_Get",
-        "description": "The operation to get an assessed software patch.",
+        "description": "The operation to get an assessed software patch discovered within an assessment operation.",
         "parameters": [
           {
             "name": "resourceGroupName",
@@ -3757,25 +3736,11 @@
             "description": "The name of the virtual machine."
           },
           {
-            "name": "resultId",
-            "in": "path",
-            "required": true,
-            "type": "string",
-            "description": "The identifier of the assessment result."
-          },
-          {
             "name": "patchId",
             "in": "path",
             "required": true,
             "type": "string",
             "description": "The identifier of the software patch."
-          },
-          {
-            "name": "$expand",
-            "in": "query",
-            "required": false,
-            "type": "string",
-            "description": "The expand expression to apply on the operation."
           },
           {
             "$ref": "#/parameters/ApiVersionParameter"
@@ -3794,7 +3759,7 @@
         }
       }
     },
-    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Compute/virtualMachines/{vmName}/patchAssessmentResults/{resultId}/softwarePatches": {
+    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Compute/virtualMachines/{vmName}/patchAssessmentResults/latest/softwarePatches": {
       "get": {
         "tags": [
           "VirtualMachineSoftwarePatches"
@@ -3815,20 +3780,6 @@
             "required": true,
             "type": "string",
             "description": "The name of the virtual machine containing the extension."
-          },
-          {
-            "name": "resultId",
-            "in": "path",
-            "required": true,
-            "type": "string",
-            "description": "The identifier of the assessment result."
-          },
-          {
-            "name": "$expand",
-            "in": "query",
-            "required": false,
-            "type": "string",
-            "description": "The expand expression to apply on the operation."
           },
           {
             "$ref": "#/parameters/ApiVersionParameter"
@@ -7862,17 +7813,17 @@
     },
     "VirtualMachineSoftwarePatch": {
       "properties": {
-        "patchName": {
+        "name": {
           "type": "string",
           "readOnly": true,
           "description": "The friendly name of the patch."
         },
-        "linuxPatchVersion": {
+        "version": {
           "type": "string",
           "readOnly": true,
           "description": "The version number of the patch."
         },
-        "windowsKbid": {
+        "kbid": {
           "type": "string",
           "readOnly": true,
           "description": "The KBID of the patch"
