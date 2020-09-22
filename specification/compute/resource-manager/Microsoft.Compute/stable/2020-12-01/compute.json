@@ -7813,7 +7813,7 @@
     },
     "VirtualMachineSoftwarePatch": {
       "properties": {
-        "name": {
+        "patchName": {
           "type": "string",
           "readOnly": true,
           "description": "The friendly name of the patch."
