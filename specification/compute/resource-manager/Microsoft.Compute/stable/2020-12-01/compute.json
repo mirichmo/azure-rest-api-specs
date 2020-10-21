@@ -7732,7 +7732,7 @@
           "readOnly": true,
           "description": "The management source."
         },
-        "error": {
+        "errorDetails": {
           "$ref": "#/definitions/ApiError",
           "readOnly": true,
           "description": "The errors that were encountered during execution of the operation. The details array contains the list of them."
@@ -7850,7 +7850,7 @@
             "modelAsString": true
           }
         },
-        "publishedDate": {
+        "publishedDateTime": {
           "type": "string",
           "readOnly": true,
           "format": "date-time",
